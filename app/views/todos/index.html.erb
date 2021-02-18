@@ -1,0 +1,22 @@
+<div class="parent-container-large">
+<div class="frame-top-large">
+<%= link_to "Todo List", root_path, class: "frame-label" %>
+<div class="wrap"> <%= button_to 'Sign out', sign_out_path, class: "button3", method: :delete %> </div>
+</div>
+<div id="clearance" class="frame-main-large">
+<div class="wrap"> <%= button_to "Create Task", new_todo_path, class: "button4", :method => "get" %> </div>
+<hr class="hr1">
+<div class="tasks">
+<% @todos.each do |todo| %>
+    <div class = "task">
+        <span class="label7"> <%= link_to todo.name, todo_path(todo) %></span>
+         <p class="label6"> <%= simple_format(todo.description, class: "label9")%> </p>
+            <div class="wrap"><%= button_to "Edit", edit_todo_path(todo), class: "btn_edit btn", :method => "get" %> </div>
+            <div class="wrap"> <%= button_to "Delete", todo_path(todo), data: {
+                confirm: "Are you sure you want to delete: #{todo.name}?",
+            }, method: :delete, class: "btn_delete btn" %> </div>
+    </div>
+    <% end %>
+</div>
+</div>
+

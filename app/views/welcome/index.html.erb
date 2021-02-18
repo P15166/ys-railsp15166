@@ -1,1 +1,37 @@
-<p>You're on Rails!</p>
+ <div class="parent-container">
+ <div 
+<% if signed_in? %> 
+ class="frame-top-large">
+<% else %>
+class="frame-top">
+<%end%>
+<span class="frame-label">TODO LIST</span>
+ <% if signed_in? %>
+ <%= button_to 'Sign out', sign_out_path, class: "button3", method: :delete %>
+ <% end %>
+ </div>
+   <div id="clearance"
+   <% if signed_in? %> 
+   class="frame-main-large">
+   <% else %>
+   class="frame-main">
+   <%end%>
+        <% if signed_in? %>
+        <p class="label2" style="padding-top:15px;">You are logged in with: <%=current_user.email%></p>
+        <hr class="hr2">
+        <p> <%= link_to 'View My Todo Tasks',todos_path, class: "label3" %> </p>
+        <p> <%= link_to 'Create New Task',new_todo_path, class: "label3" %> </p>
+        <p class="label4">Navigate to '/todos/id' where id the id of the todo task you want to open.</p>
+        <p class="label4">To manually delete a post with a given id, navigate to '/delete/id'.</p>
+        <p class="label4">To manually edit a post with a given id, navigate to 'todos/id/edit'</p>
+        <hr class="hr1">
+        <p class="label5" style="padding-bottom:5px;">Υπηρεσιοστρφές Λογισμικό Εργασία 2020-2021 - Ιωάννης Παρασκευόπουλος Π15166</p>
+        <% else %>
+        <p class="label1">Welcome to your todo list! You need to login to continue.</p>
+        <p class="label1">If you don't have an account you can create one!</p>
+        <%= button_to 'Sign in', sign_in_path, class: "button2", :method => "get" %>
+        <%= button_to 'Sign up', sign_up_path, class: "button2", :method => "get" %>
+        <% end %>
+   </div>
+ </div>
+ 

@@ -1,0 +1,14 @@
+<div class="parent-container">
+<div class="frame-top"><span class="frame-label">Sign up</span></div>
+    <div id="clearance" class="frame-main">
+    <%= form_for @user do |form| %>
+        <%= render partial: '/users/form', object: form %>
+        <div class="submit-field">
+        <%= form.submit 'Sign Up', :class => 'button1' %>
+        </div>
+        <div class="other-links">
+        <%= link_to t(".sign_in"), sign_in_path, class:"signup-link" %>
+        </div>
+    <% end %>
+    </div>
+</div>
