@@ -4,7 +4,7 @@
             <div class="wrap"> <%= button_to 'Sign out', sign_out_path, class: "button3", method: :delete %> </div>
     </div>
     <div id="clearance" class="frame-main-large">
-        <p style="font-size: 18px; font-weigth: 600; padding-left: 15px; padding-top: 20px;">Create new task</p>
+        <p style="font-size: 18px; font-weigth: 600; padding-left: 15px; padding-top: 20px;">Update Task</p>
         <hr class="hr2">
 
         <% if @errors.present? %>
@@ -24,7 +24,7 @@
                 <%= form.text_area :description, class: "textarea2", rows: 10, placeholder: "Task Description" %>
             </div>
             <div class="actions">
-                <%= form.submit "Create New Task", class:"button5" %>
+                <%= form.submit "Update Task", class:"button5" %>
             </div>
         <% end %>
     </div>
